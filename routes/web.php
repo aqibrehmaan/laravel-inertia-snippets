@@ -35,4 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/test', function() {
+    return redirect()->back()->with('toast', 'Toast endpoint!');
+});
+
 require __DIR__.'/auth.php';
